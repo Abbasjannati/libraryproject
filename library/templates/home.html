@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Home</title>
+</head>
+<body>
+    <h1>Welcome to the Library Home Page</h1>
+    <p>This is the home page for our Library!</p>
+    <p>Our librarian is <strong>{{ name }}</strong>.</p>
+    <h2>Books Available:</h2>
+    
+        {% for book in books%}
+         <h3>{{ book.title }}</h3>
+         <p>Author: {{ book.author }}</p>
+         <p>Price: ${{ book.price }}</p>
+        {% endfor %}
+    
+</body>
+</html>
