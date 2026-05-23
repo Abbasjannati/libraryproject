@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1>Welcome to the Library Home Page</h1>
-    <p>This is the home page for our Library!</p>
-    <p>Our librarian is <strong>{{ name }}</strong>.</p>
-    <h2>Books Available:</h2>
-    
-        {% for book in books%}
-         <h3>{{ book.title }}</h3>
-         <p>Author: {{ book.author }}</p>
-         <p>Price: ${{ book.price }}</p>
-        {% endfor %}
-    
+   <nav>
+    <h1>Welcome to the Library</h1>
+   </nav>
+
+   <div class ="container">
+    <h2>Available Books</h2>
+
+    {% for book in books %}
+    <div class ="book-card">
+        <h3>{{ book.title }}</h3>
+        <p>Author: {{ book.author }}</p>
+        <p>Published: {{ book.published_date }}</p>
+        <p>price: ${{ book.price }}</p>
+    </div>
+    {% endfor %}
 </body>
 </html>
+        
+   
