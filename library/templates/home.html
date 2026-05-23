@@ -9,7 +9,13 @@
 </head>
 <body>
    <nav>
-    <h1>Welcome to the Library</h1>
+    <h1>📚 Welcome to the Library!</h1>
+    {% if user.is_authenticated %}
+    <span>Hello, {{ user.username }}! </span>
+    <a href="/accounts/logout/">Logout</a>
+    {% else %}
+    <a href="/accounts/login/">Login</a>
+    {% endif %}
    </nav>
 
    <div class ="container">
