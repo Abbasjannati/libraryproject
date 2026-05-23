@@ -13,6 +13,13 @@
    </nav>
 
    <div class ="container">
+
+       <form method="GET" class="search-form">
+        <input type="text" name="search"
+            placeholder ="Search books..."
+            value="{{ search }}">
+        <button type="submit">Search</button>
+       </form>
     <h2>Available Books</h2>
 
     {% for book in books %}

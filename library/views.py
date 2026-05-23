@@ -4,7 +4,12 @@ from rest_framework.response import Response
 from .models import Book
 from .serializers import BookSerializer
 def home(request):
-    books = Book.objects.all()
+    search = request.GET.get('search', '')
+
+    if search:
+        books = Book.objects.filter(title__icontains=search)
+    else:
+        books = Book.objects.all()
     context = {
         'name': 'Abbas zaidi',
         'books': books
