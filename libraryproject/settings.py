@@ -23,13 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ci#6tuf6muku#5_o30nmpy(3)qqihz-+zl%voo(b%5^sih_2x2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['libraryproject-production-d9b5.up.railway.app', 'localhost', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS =[
     'https://libraryproject-production-d9b5.up.railway.app'
 ]
+# Security and Proxy settings for Railway
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_TRUSTED_ORIGINS = ['https://libraryproject-production-d9b5.up.railway.app']
 
 
 # Application definition
