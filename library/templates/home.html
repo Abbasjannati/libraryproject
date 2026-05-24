@@ -6,11 +6,13 @@
     <title>Library Home</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    
 </head>
 <body>
    <nav>
     <h1>📚 Welcome to the Library!</h1>
     {% if user.is_authenticated %}
+    
     <span>Hello, {{ user.username }}! </span>
     <a href="/accounts/logout/">Logout</a>
     {% else %}
@@ -36,6 +38,8 @@
         <p>price: ${{ book.price }}</p>
     </div>
     {% endfor %}
+
+    <script src="{% static 'script.js' %}"></script>
 </body>
 </html>
         
